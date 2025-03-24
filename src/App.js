@@ -1,3 +1,4 @@
+
 // El componente App es el padre de:
 // - Cabecera
 // - Listado
@@ -9,10 +10,21 @@ import Listado from './components/Listado'
 import {useState} from 'react'
 function App() {
 
+  
+   
   const [total, setTotal] = useState({
+
     precio: 0, 
     stock: 0
   })
+  const aumentarTotal = () => {
+    setTotal((prevState) => ({
+        ...prevState, // Mantiene las otras propiedades intactas
+        precio: prevState.precio + 1, // Incrementa el precio
+        stock: prevState.stock + 1, // Incrementa el stock
+    }));
+
+  }
 
   return (
     <div className="App">
